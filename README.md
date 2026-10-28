@@ -1,10 +1,20 @@
 # 🎀 Kitty Juntos
 
-Um quebra-cabeça cooperativo da Hello Kitty para duas pessoas jogarem no navegador, à distância. HTML, CSS e JavaScript, sem build e sem chave de API obrigatória.
+Quebra-cabeças cooperativos de Minions, Gojo e Hello Kitty para duas pessoas jogarem no navegador, à distância. HTML, CSS e JavaScript, sem build e sem chave de API obrigatória.
+
+## Atualizar o jogo já publicado
+
+1. Extraia `kitty-juntos-v2.zip`.
+2. No repositório existente, use **Add file → Upload files** e envie todos os arquivos extraídos, incluindo `puzzles.js` e a pasta `assets` completa. Substitua os arquivos de mesmo nome.
+3. Confirme em **Commit changes** na branch `main`. Preserve o `.nojekyll` já existente.
+4. Aguarde o deploy e recarregue a página com **Ctrl + F5**. Ambos os jogadores precisam carregar a nova versão e criar uma nova sala.
+5. Escolha Minions, Gojo ou Hello Kitty no seletor acima do tabuleiro. Só quem criou a sala pode trocar a imagem; a troca reinicia a partida para os dois, com confirmação se já houver peças encaixadas.
+
+Esta atualização usa salas de versão 2 para impedir que uma versão antiga entre e mostre uma imagem diferente. Partidas antigas da versão 1 não são importadas automaticamente. O fundo removido é a imagem-guia do tabuleiro; as fotos enviadas continuam intactas.
 
 ## Publicar no GitHub Pages
 
-O arquivo `kitty-juntos.zip` já vem com `index.html` na raiz, pronto para upload:
+O arquivo `kitty-juntos-v2.zip` já vem com `index.html` na raiz, pronto para upload:
 
 1. Extraia o ZIP no computador.
 2. Crie um repositório no GitHub, por exemplo `kitty-juntos` (público se você usa GitHub Free).
@@ -35,12 +45,12 @@ A sala aceita no máximo duas conexões. Uma peça fica reservada por até 30 se
 ## Recursos
 
 - 16, 36 ou 64 peças com encaixes curvos reais.
-- Imagem da Hello Kitty em um piquenique, gerada para o projeto.
+- Seletor com Minions e Gojo enviados pelo usuário, além da arte da Hello Kitty. A escolha é compartilhada na sala.
 - Movimentos e cursor do parceiro em tempo real.
 - Autoridade do anfitrião para resolver disputas pela mesma peça.
-- Filtro de bordas, referência ampliada e guia opcional.
+- Filtro de bordas e referência ampliada. Tabuleiro sem a imagem ao fundo.
 - Progresso compartilhado, cronômetro, som opcional e tela de conclusão.
-- Salvamento automático no navegador do anfitrião. Ao criar outra sala na mesma dificuldade, a última partida incompleta pode ser retomada. Isso não é um backup na nuvem e limpar os dados do navegador remove o progresso.
+- Salvamento automático no navegador do anfitrião. Ao criar outra sala na mesma dificuldade e imagem, a última partida incompleta pode ser retomada. Isso não é um backup na nuvem e limpar os dados do navegador remove o progresso.
 
 ## Conexão e limitações
 
@@ -95,6 +105,7 @@ npm test
 - `style.css`: tema visual e responsividade.
 - `app.js`: interface, conexão, drag-and-drop e sincronização.
 - `engine.js`: estado, validação, reservas e encaixe das peças.
+- `puzzles.js`: catálogo das três imagens.
 - `config.js`: configuração opcional do PeerJS/TURN.
 - `assets/picnic.webp`: arte do quebra-cabeça.
 - `assets/peerjs.min.js`: PeerJS 1.5.5 incluído localmente.
@@ -102,4 +113,4 @@ npm test
 
 ## Créditos
 
-Fan game não oficial. Hello Kitty é uma personagem da Sanrio; este projeto não é afiliado à marca. A imagem foi gerada para a cena deste jogo; não é arte oficial. O código original está sob licença MIT; a licença de código não concede direitos sobre a personagem. PeerJS possui licença MIT, preservada em `assets/PEERJS-LICENSE.txt`. Fontes DM Sans e Nunito são carregadas pelo Google Fonts, com fontes de sistema como fallback.
+Fan game não oficial. Hello Kitty é uma personagem da Sanrio; este projeto não é afiliado à marca. A imagem da Hello Kitty foi gerada para o jogo; não é arte oficial. As imagens de Minions e Gojo foram fornecidas pelo usuário e preservadas integralmente, incluindo suas marcas visíveis. Os personagens pertencem aos respectivos titulares. O código original está sob licença MIT; a licença de código não concede direitos sobre a personagem. PeerJS possui licença MIT, preservada em `assets/PEERJS-LICENSE.txt`. Fontes DM Sans e Nunito são carregadas pelo Google Fonts, com fontes de sistema como fallback.
